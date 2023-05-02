@@ -4,9 +4,4 @@
 
 def list_all(mongo_collection):
     """ List all documents from the mongodb database """
-    docs = mongo_collection.find()
-
-    if docs.count() == 0:
-        return []
-
-    return docs
+    return [doc for doc in mongo_collection.find()]
